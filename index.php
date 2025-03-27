@@ -1,10 +1,7 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "");
+include 'db.php';
 
-if ($con){
-    echo "connected";
-}
 
 ?>
 
@@ -17,5 +14,8 @@ if ($con){
 </head>
 <body>
     <h2>Welcome to the homepage!</h2>
+    <p>
+        <a href="login.php">Login</a>
+    </p>
 </body>
 </html>
