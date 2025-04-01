@@ -11,14 +11,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if ($password !== $confirm_password){
         $error = "<br>Passwords do not match";
-        echo $error;
     } else {
-        $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+
+        $sql = "SELECT * FROM users WHERE username= '$username' LIMIT 1";
+        $result = mysqli_query($conn, $sql);
+
+        if (!mysqli_num_rows($result) > 0){
+            $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
         
-        if(mysqli_query($conn, $sql)){
-        echo "<br>registration complete";
+            if(mysqli_query($conn, $sql)){
+            echo "<br>registration complete";
+            } else {
+                $error = "<br>no data inserted, error: " . mysqli_error($conn);
+            }
         } else {
-            echo "<br>no data inserted, error: " . mysqli_error($conn);
+            $error = "<br>username already exists";
+
         }
     }
 }
@@ -63,11 +71,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <form method="POST" action="">
             <h2>Create your Account</h2>
 
-            <!-- Error message placeholder -->
-            <p style="color:red">
-                <!-- Error message goes here -->
-            </p>
-
             <label for="username">Username:</label>
             <input placeholder="Enter your username" type="text" name="username" required>
             <br>
@@ -81,6 +84,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input placeholder="Confirm your password" type="password" name="confirm_password" required>
             <br>
             <input type="submit" value="Register">
+            <?php if($error): ?>
+                <p style="color:red">
+                    <?php echo $error; ?>
+                </p>
+            <?php endif; ?>
         </form>
     </div>
 </div>
