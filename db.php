@@ -1,7 +1,9 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "");
+$conn = mysqli_connect("localhost", "root", "", "login_app");
 
-if ($con){
+if ($conn){
     echo "connected";
+} else {
+    echo "not connected"; //. mysqli_error($con);
 }
