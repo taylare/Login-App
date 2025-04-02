@@ -17,7 +17,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $result = mysqli_query($conn, $sql);
 
         if (!mysqli_num_rows($result) > 0){
-            $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$password', '$email')";
+
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+            $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$passwordHash', '$email')";
         
             if(mysqli_query($conn, $sql)){
             echo "<br>registration complete";
@@ -26,8 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
         } else {
             $error = "<br>username already exists";
-
-        }
+        } 
     }
 }
 ?>
