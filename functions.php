@@ -5,5 +5,9 @@ function setActiveClass($pageName){
     return ($current_page === $pageName . ".php") ? "active" : '';
 }
 
+function getPageClass(){
+    return basename($_SERVER['PHP_SELF'], ".php"); 
+}
+
 
 ?>

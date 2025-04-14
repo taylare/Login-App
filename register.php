@@ -39,9 +39,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-
-<body class="register">
-    
     
     <div class="container">
         <div class="form-container">

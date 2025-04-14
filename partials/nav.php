@@ -1,8 +1,3 @@
-<?php
-
-include "functions.php";
-
-?>
 
 <nav>  
     <ul> 

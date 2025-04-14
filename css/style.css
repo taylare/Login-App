@@ -4,6 +4,22 @@ body {
 
 }
 
+body.index {
+    background-color: #fdecfc
+}
+
+body.register {
+    background-color: rgb(255, 254, 234);
+}
+
+body.admin {
+    background-color: rgb(255, 226, 247);
+}
+
+body.login {
+    background-color: rgb(213, 247, 255);
+}
+
 .container {
   margin: 10px;  
 }

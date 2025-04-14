@@ -40,8 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-<body class="login">
-
     
     <div class="container">
         <div class="form-container">
