@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-top: 50px;
+    padding-top: 20px;
 
 }
 
@@ -8,9 +8,81 @@ body.index {
     background-color: #fdecfc
 }
 
+/*FOR THE REGISTER & LOGIN PAGE */
 body.register {
     background-color: rgb(255, 254, 234);
 }
+
+body.register, body.login .form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    margin-top: 20px;
+    
+}
+
+body.register .form-container h2, body.login .form-container h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    text-align: center;
+    color:rgb(41, 42, 41);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.register form, body.login form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 400px;
+}
+
+body.register form input[type='text'], 
+body.register form input[type='email'],
+body.register form input[type='password'],
+body.login form input[name='username'], 
+body.login form input[name='password'] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #d3d3d3;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body.register form input[type='submit'], 
+body.login form input[type='submit']{
+    width: 100%;
+    padding: 14px;
+    background-color:rgb(41, 42, 41);
+    border-style: none;
+    border-radius: 8px; 
+    color:rgb(255, 255, 255);
+    font-size: 16px; font-weight:600;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+body.register form input[type='submit']:hover, 
+body.login form input[type='submit']:hover{
+    background-color: rgb(255, 174, 237);
+    transition: background-color 0.4s ease;
+}
+
+body.register form label, body.login form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color:rgb(41, 42, 41);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* END OF REGISTER & LOGIN PAGE */
 
 body.admin {
     background-color: rgb(255, 226, 247);
@@ -19,6 +91,8 @@ body.admin {
 body.login {
     background-color: rgb(213, 247, 255);
 }
+
+
 
 .container {
   margin: 10px;  

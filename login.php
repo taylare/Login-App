@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            exit; 
 
         } else {
-            $error = "<br> username or pw incorrect";
+            $error = "<br> Password is incorrect";
         }
 
     } else {
@@ -44,18 +44,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container">
         <div class="form-container">
             <!-- login form -->
+            
             <form method="POST" action="">
                 <h2>Login</h2>
 
                 <label for="username">Username:</label>
                 <input placeholder="Enter your username" type="text" name="username" required>
-                <br>
-                <br>
+       
 
                 <label for="password">Password:</label>
                 <input placeholder="Enter your password" type="password" name="password" required>
-                <br>
-
+            
 
                 <input type="submit" value="Login">
 

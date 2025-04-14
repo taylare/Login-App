@@ -43,24 +43,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <div class="container">
         <div class="form-container">
             <!-- Registration form -->
+            
             <form method="POST" action="">
-                <h2>Create your Account</h2>
+            <h2>Create your Account:</h2>
 
                 <label for="username">Username:</label>
                 <input placeholder="Enter your username" type="text" name="username" required>
-                <br>
+             
 
                 <label for="email">Email:</label>
                 <input placeholder="Enter your email" type="email" name="email" required>
-                <br>
+               
 
                 <label for="password">Password:</label>
                 <input placeholder="Enter your password" type="password" name="password" required>
-                <br>
+             
 
                 <label for="confirm_password">Confirm Password:</label>
                 <input placeholder="Confirm your password" type="password" name="confirm_password" required>
-                <br>
+ 
 
                 <input type="submit" value="Register">
 
