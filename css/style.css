@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    padding-top: 50px;
+
+}
+
+.container {
+  margin: 10px;  
+}
+
+nav {
+    background-color: rgb(41, 42, 41);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    transition: background-color 0.4s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgb(92, 92, 92);
+}

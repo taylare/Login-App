@@ -1,7 +1,10 @@
-<?php include "partials/header.php"; ?>
+<?php 
+    include "partials/header.php"; 
+    include "partials/nav.php"; 
+?>
 
-
+<div class="container">
     <h2>Welcome to the homepage!</h2>
-   <?php include "partials/nav.php" ?>
-   
+  
+</div>
 <?php include "partials/footer.php"; ?>

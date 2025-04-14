@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
-</head>
+<?php 
+    include "partials/header.php";
+    include "partials/nav.php";
+ ?>
 <body>
-    <h1> Welcome to admin</h1>
-    <p>
-        <a href="logout.php">Logout</a>
-        </p>
-</body>
-</html>
+<div class="container">
+    <h1> Welcome to admin <?php echo $_SESSION['username'] ?>!</h1>
+</div>
+<?php 
+    include "partials/footer.php";
+ ?>

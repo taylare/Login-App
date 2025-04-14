@@ -1,5 +1,6 @@
 <?php 
-include 'db.php'; // Include database connection
+include "partials/header.php";
+include "partials/nav.php";
 
 $error = ""; // Initialize an error message variable
 
@@ -38,30 +39,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to external stylesheet -->
-</head>
 
 <body class="register">
-    <!-- Navigation menu -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-
-            <!-- When the user is logged in -->
-            <li><a href="admin.html">Admin</a></li>
-            <li><a href="logout.html">Logout</a></li>
-
-            <!-- When the user is not logged in -->
-            <li><a href="register.html">Register</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    
     
     <div class="container">
         <div class="form-container">
@@ -94,8 +74,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </form>
         </div>
     </div>
-</body>
-</html>
+<?php 
+    include "partials/footer.php";
+ ?>
 <?php
 mysqli_close($conn);
 ?>

@@ -1,16 +1,15 @@
-<p>
-        <a href="register.php">Register</a>
-    </p>
+<nav>  
+    <ul> 
+       <li><a href="index.php">Home</a></li>
+       <li><a href="register.php">Register</a></li>
 
-    <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-        <p>
-        <a href="admin.php">Admin</a>
-        </p>
-        <p>
-        <a href="logout.php">Logout</a>
-        </p>
-    <?php else: ?>
-        <p>
-        <a href="login.php">Login</a>
-        </p>
-    <?php endif; ?>
+        <?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+            
+            <li><a href="admin.php">Admin</a></li>
+            <li><a href="logout.php">Logout</a></li>
+            
+        <?php else: ?>
+           <li><a href="login.php">Login</a></li>
+        <?php endif; ?>
+    </ul>
+</nav>
