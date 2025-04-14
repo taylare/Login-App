@@ -1,5 +1,11 @@
 <?php 
 include 'db.php'; // Include database connection
+session_start();
+
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
+    header("Location: admin.php");
+} //keeps you logged in
+
 
 $error = ""; // Initialize an error message variable
 
