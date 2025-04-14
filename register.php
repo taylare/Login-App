@@ -28,7 +28,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$passwordHash', '$email')";
         
             if(mysqli_query($conn, $sql)){
-                echo "<br>Registration complete"; // Success message
+                $_SESSION['logged_in'] = true;
+                $_SESSION['username'] = $username;
+                header("Location: admin.php");
+                exit; 
             } else {
                 $error = "<br>Failed to insert data: " . mysqli_error($conn);
             }
@@ -45,14 +48,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <!-- Registration form -->
             
             <form method="POST" action="">
-            <h2>Create your Account:</h2>
-
+                <h2>Create your Account:</h2>
+                     <!-- Display error messages, if any -->
+                <?php if($error): ?>
+                    <p style="color:red"><?php echo $error; ?></p>
+                <?php endif; ?>
                 <label for="username">Username:</label>
-                <input placeholder="Enter your username" type="text" name="username" required>
+                <!--keep input fields if error occurs so user doesnt have to rewrite: --> 
+                <input value="<?php echo isset($username) ? $username : ''; ?>" placeholder="Enter your username" type="text" name="username" required>
              
 
                 <label for="email">Email:</label>
-                <input placeholder="Enter your email" type="email" name="email" required>
+                <input value="<?php echo isset($email) ? $email : ''; ?>" placeholder="Enter your email" type="email" name="email" required>
                
 
                 <label for="password">Password:</label>
@@ -65,10 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 <input type="submit" value="Register">
 
-                <!-- Display error messages, if any -->
-                <?php if($error): ?>
-                    <p style="color:red"><?php echo $error; ?></p>
-                <?php endif; ?>
+                
             </form>
         </div>
     </div>

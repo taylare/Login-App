@@ -4,9 +4,76 @@ body {
 
 }
 
+
+/* HERO PAGE */
 body.index {
     background-color: #fdecfc
 }
+
+body.index .container {
+ margin: 0;
+}
+body.index .hero {
+    background-image: url("../images/bgimg.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+body.index .hero .hero-content {
+    max-width: 600px;
+    padding: 20px;
+}
+
+body.index .hero .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+body.index .hero .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    
+}
+
+body.index .hero .hero-content .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+body.index .hero .hero-content .hero-buttons .btn {
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color:rgb(255, 142, 198);
+}
+
+body.index .hero .hero-content .hero-buttons .btn:hover {
+    background-color:rgb(250, 112, 181);
+}
+
+/*END OF HERO PAGE */
 
 /*FOR THE REGISTER & LOGIN PAGE */
 body.register {
@@ -19,7 +86,6 @@ body.register, body.login .form-container {
     align-items: center;
     height: 100vh;
     padding: 20px;
-    margin-top: 20px;
     
 }
 

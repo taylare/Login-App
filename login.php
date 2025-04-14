@@ -47,7 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             <form method="POST" action="">
                 <h2>Login</h2>
-
+     <!-- Display error messages, if any -->
+                <?php if($error): ?>
+                    <p style="color:red"><?php echo $error; ?></p>
+                <?php endif; ?>
                 <label for="username">Username:</label>
                 <input placeholder="Enter your username" type="text" name="username" required>
        
@@ -58,10 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <input type="submit" value="Login">
 
-                <!-- Display error messages, if any -->
-                <?php if($error): ?>
-                    <p style="color:red"><?php echo $error; ?></p>
-                <?php endif; ?>
+               
             </form>
         </div>
     </div>
