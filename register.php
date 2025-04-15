@@ -16,28 +16,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if ($password !== $confirm_password){
         $error = "<br>Passwords do not match";
     } else {
-        // Check if the username already exists in the database
-        $sql = "SELECT * FROM users WHERE username= '$username' LIMIT 1";
-        $result = mysqli_query($conn, $sql);
-
-        if (!mysqli_num_rows($result) > 0){
-            // Hash the password before storing it in the database
-            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-
-            // Insert new user data into the database
-            $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$passwordHash', '$email')";
-        
-            if(mysqli_query($conn, $sql)){
-                $_SESSION['logged_in'] = true;
-                $_SESSION['username'] = $username;
-                header("Location: admin.php");
-                exit; 
+            //check if username already exists
+            if(user_exists($conn, $username)){
+                $error = "Username already exists, please choose another";
             } else {
+            // Hash the password before storing it in the database
+                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+                // Insert new user data into the database
+                $sql = "INSERT INTO users (username, password, email) VALUES ('$username', '$passwordHash', '$email')";
+            
+                if(mysqli_query($conn, $sql)){
+                    $_SESSION['logged_in'] = true;
+                    $_SESSION['username'] = $username;
+                    header("Location: admin.php");
+                    exit; 
+                } else {
                 $error = "<br>Failed to insert data: " . mysqli_error($conn);
-            }
-        } else {
-            $error = "<br>Username already exists"; // Error message if username is taken
-        } 
+                }
+        
+            } 
     }
 }
 ?>
