@@ -209,9 +209,9 @@ nav ul li a.active {
 
 /* Style for the user table under body.admin */
 body.admin .user-table {
-    width: 100%;
+    width: 75%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 20px auto; /* centers the table horizontally */
 }
 
 body.admin .user-table th, 
@@ -265,7 +265,8 @@ body.admin {
 }
 
 body.admin .users-table {
-    margin: 10px;
+    margin: 30px;
+    padding: 40px;
 }
 
 body.admin h1, 
@@ -281,16 +282,18 @@ body.admin .container .notification {
     font-size: 16px;
     width: 100%;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
-body.admin .container .notification.success {
+.notification.success {
    background-color: #d4edda;
    color: #155724;
    border: 1px solid #c3e6cb;
 }
-body.admin .container .notification.error {
+.notification.error {
    background-color: #f8d7da;
    color: #721c24;
    border: 1px solid #f5c6cb;
 }
+
 
 /* END OF ADMIN PAGE */ 
