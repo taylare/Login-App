@@ -5,7 +5,7 @@ include "partials/header.php";
 include "partials/nav.php";
  
 
-if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
+if (isUserLoggedIn()) {
     header("Location: admin.php");
 } //keeps you logged in
 

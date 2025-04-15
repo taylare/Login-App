@@ -1,5 +1,16 @@
 <?php
 
+
+function isUserLoggedIn(){
+    return (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true);
+}
+
+
+function redirect($location){
+    header("Location: $location");
+    exit;
+}
+
 function setActiveClass($pageName){
     $current_page = basename($_SERVER['PHP_SELF']);
     return ($current_page === $pageName . ".php") ? "active" : '';
@@ -16,6 +27,11 @@ function user_exists($conn, $username){
 
        return mysqli_num_rows($result) > 0; 
     }
+
+    function readableDate($date){
+        return date ("F j, Y", strtotime($date));
+    }
+
 
 
 ?>
