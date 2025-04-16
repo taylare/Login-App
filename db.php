@@ -1,12 +1,12 @@
 <?php
 
 $host = "localhost";
-$username = "root";
+$name = "root";
 $password = "";
 $db = "login_app";
 
 
-$conn = mysqli_connect($host, $username, $password, "login_app");
+$conn = mysqli_connect($host, $name, $password, "login_app");
 
 if(!$conn){
 

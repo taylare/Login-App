@@ -48,6 +48,7 @@
 
     //  fetch the updated list:
     $result = mysqli_query($conn, "SELECT id, username, email, reg_date FROM users;");
+
 ?>
 
     <h1> Welcome to admin <?php echo $_SESSION['username'] ?>!</h1>
